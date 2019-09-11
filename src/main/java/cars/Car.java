@@ -1,8 +1,8 @@
 package cars;
 
 public class Car {
-    protected int price;
-    protected int damage;
+    protected double price;
+    protected double damage;
     protected String colour;
     protected Engine engine;
     protected Tyre tyre;
@@ -15,11 +15,19 @@ public class Car {
         this.tyre = tyre;
     }
 
-    public int getPrice() {
-        return price;
+    public double getPriceWithDamage() {
+        return price * (1 - damage);
     }
 
-    public int getDamage() {
+    public double getDamageCost() {
+        return price - getPriceWithDamage();
+    }
+
+    public void setDamage(double damage) {
+        this.damage = damage;
+    }
+
+    public double getDamage() {
         return damage;
     }
 

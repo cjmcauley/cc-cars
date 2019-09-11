@@ -13,7 +13,7 @@ public class Dealership {
     }
 
     public void buyCar(Car car) {
-        till -= car.getPrice();
+        till -= car.getPriceWithDamage();
         cars.add(car);
     }
 
@@ -22,7 +22,7 @@ public class Dealership {
     }
 
     public Car sellCar(Car car) {
-        till += car.getPrice();
+        till += car.getPriceWithDamage();
         cars.remove(car);
         return car;
     }
