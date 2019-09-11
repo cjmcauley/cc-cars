@@ -32,4 +32,13 @@ public class DealershipTest {
         assertEquals(9000, dealership.getTill(), epsilon);
     }
 
+    @Test
+    public void canRepairCar() {
+        Car damagedCar = new Car(2000, 0.5, "Blue", engine, tyre);
+        dealership.buyCar(damagedCar);
+        dealership.repairCar(damagedCar);
+        assertEquals(8000, dealership.getTill(), epsilon);
+        assertEquals(0, damagedCar.getDamage(), epsilon);
+        assertEquals(2000, damagedCar.getPriceWithDamage(), epsilon);
+    }
 }

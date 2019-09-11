@@ -7,7 +7,7 @@ public class Car {
     protected Engine engine;
     protected Tyre tyre;
 
-    public Car(int price, int damage, String colour, Engine engine, Tyre tyre) {
+    public Car(double price, double damage, String colour, Engine engine, Tyre tyre) {
         this.price = price;
         this.damage = damage;
         this.colour = colour;

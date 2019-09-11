@@ -30,4 +30,10 @@ public class Dealership {
     public int numberOfCars() {
         return cars.size();
     }
+
+    public void repairCar(Car car) {
+        till -= car.getDamageCost();
+        car.setDamage(0);
+    }
+
 }
