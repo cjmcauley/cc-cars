@@ -1,6 +1,6 @@
 package cars;
 
-public class Engine {
+public abstract class Engine {
     private int size;
 
     public Engine(int size) {
