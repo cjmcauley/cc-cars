@@ -20,7 +20,7 @@ public class CustomerTest {
     @Before
     public void before() {
         customer = new Customer();
-        dealership = new Dealership();
+        dealership = new Dealership(10000);
         engine = new FuelEngine(2400, "Petrol");
         tyre = new Tyre("Road");
         car = new Car(1000, 0, "Red", engine, tyre);
@@ -28,7 +28,7 @@ public class CustomerTest {
 
     @Test
     public void customerCanBuyCar() {
-        dealership.addCar(car);
+        dealership.buyCar(car);
         customer.buyCar(car, dealership);
         assertEquals(car, customer.getCar());
         assertEquals(0, dealership.numberOfCars());

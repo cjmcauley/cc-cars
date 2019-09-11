@@ -7,12 +7,13 @@ public class Dealership {
     ArrayList<Car> cars;
     private double till;
 
-    public Dealership() {
-        till = 0;
+    public Dealership(double till) {
+        this.till = till;
         cars = new ArrayList<Car>();
     }
 
-    public void addCar(Car car) {
+    public void buyCar(Car car) {
+        till -= car.getPrice();
         cars.add(car);
     }
 

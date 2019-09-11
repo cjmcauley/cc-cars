@@ -15,18 +15,21 @@ public class DealershipTest {
     Engine engine;
     Tyre tyre;
 
+    private final double epsilon = 0.0001;
+
     @Before
     public void before() {
-        dealership = new Dealership();
+        dealership = new Dealership(10000);
         engine = new FuelEngine(2400, "Petrol");
         tyre = new Tyre("Road");
         car = new Car(1000, 0, "Red", engine, tyre);
     }
 
     @Test
-    public void dealershipCanAddCar() {
-        dealership.addCar(car);
+    public void canBuyCar() {
+        dealership.buyCar(car);
         assertEquals(1, dealership.numberOfCars());
+        assertEquals(9000, dealership.getTill(), epsilon);
     }
 
 }
